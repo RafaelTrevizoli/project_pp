@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>PVC - 25x25cm</title>
+</head>
+<body>
+<h1>PVC - 25x25cm</h1>
+
+<ul>
+    <li><a href="../paginaprincipal.html">Menu principal</a></li>
+    <li><a href="">Orçamento com várias MEDIDAS</a></li>
+</ul>
+
+<div class="geral">
+    <div class="border">
+        <div class="center">
+            <form id="calcForm">
+                <div class="form">
+                    <label for="n1">Digite a primeira medida: </label>
+                    <input type="number" name="n1" id="n1" step="0.01">
+                </div>
+
+                <div class="form">
+                    <label for="n2">Digite a segunda medida: </label>
+                    <input type="number" name="n2" id="n2" step="0.01">
+                </div>
+
+                <div class="button">
+                    <input type="button" id="calcular" value="Calcular">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="border">
+        <div class="center">
+            <form id="calcForm">
+                <div class="form">
+                    <label for="m1">Digite a medida em (m²): </label>
+                    <input type="number" name="m1" id="m1" step="0.01">
+                </div>
+                <div class="button">
+                    <input type="button" id="calcular2" value="Calcular">
+                </div>
+            </form>
+        </div>
+</div>
+
+<div class="result" id="resultado"></div>
+
+<script>
+document.getElementById('calcular').addEventListener('click', function() {
+    var n1 = parseFloat(document.getElementById('n1').value);
+    var n2 = parseFloat(document.getElementById('n2').value);
+    
+    var media = n1 * n2;
+    var result = media / 0.0625;
+
+    var recomendado = "";
+
+    if (result > 0 && result <= 10){
+        recomendado = "Para medida de " + n1 + "m x " + n2 + "m recomendo que compre 1 kit com 10 unidades de placas 25x25cm!!!" + "<br>" + "<br>"
+        +"Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 10 && result <= 20){
+        recomendado = "Para medida de " + n1 + "m x " + n2 + "m recomendo que compre 2 kits com 10 unidades de placas 25x25cm!!!" + "<br>" + "<br>"
+        +"Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 20 && result <= 30){
+        recomendado = "Para medida de " + n1 + "m x " + n2 + "m recomendo que compre 3 kits com 10 unidades!!!" + "<br>" + "<br>"
+        +"Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 30 && result <= 40){
+            recomendado = "Para medida de " + n1 + "m x " + n2 + "m recomendo que compre 2 kits com 20 unidades!!!" + "<br>" + "<br>"
+            +"Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 40 && result <= 50){
+        recomendado = "Para medida de " + n1 + "m x " + n2 + "m recomendo que compre 1 kit com 50 unidades!!!" + "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜";
+    } 
+    if (result > 50 && result <= 60){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 60 && result <= 70){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 50 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜"; 
+    } 
+    if (result > 70 && result <= 80){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 50 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 80 && result <= 90){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kits com 50 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 90 && result <= 100){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜";
+    } 
+    if (result > 100 && result <= 110){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 110 && result <= 120){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 120 && result <= 130){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 130 && result <= 140){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 140 && result <= 150){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜";
+    } 
+    if (result > 150 && result <= 160){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 160 && result <= 170){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 170 && result <= 180){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 4 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 180 && result <= 190){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 1 kit com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 190 && result <= 200){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜";
+    } 
+    if (result > 200 && result <= 210){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 210 && result <= 220){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 220 && result <= 230){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 230 && result <= 240){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 240 && result <= 250){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜";
+    } 
+    if (result > 250 && result <= 260){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 260 && result <= 270){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 270 && result <= 280){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 4 kit com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 280 && result <= 290){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 2 kits com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 290 && result <= 300){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜";
+    } 
+    if (result > 300 && result <= 310){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>" 
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 310 && result <= 320){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    }
+    if (result > 320 && result <= 330){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 330 && result <= 340){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 1 kit com 40 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 40 unidades💜";
+    } 
+    if (result > 340 && result <= 350){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜";
+    } 
+    if (result > 350 && result <= 360){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 360 && result <= 370){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 370 && result <= 380){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 4 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 380 && result <= 390){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 3 kits com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 390 && result <= 400){ 
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜";
+    }
+    if (result > 400 && result <= 410){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 410 && result <= 420){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 420 && result <= 430){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 430 && result < 440){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 440 && result <= 450){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 50 unidades💜";
+    } 
+    if (result > 450 && result <= 460){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 460 && result <= 470){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 470 && result <= 480){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 4 kits com 20 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+        + "Segue nosso kit com 20 unidades💜";
+    } 
+    if (result > 480 && result <= 490){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 4 kits com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>" 
+        + "Segue nosso kit com 10 unidades💜";
+    } 
+    if (result > 490 && result <= 500){
+        recomendado = "Para medida de " + n1 +  "m x " + n2 +  "m recomendo que compre 5 kits com 100 unidades !!!" +  "<br>" + "<br>"
+        + "Segue nosso kit com 100 unidades💜";
+    } 
+    document.getElementById('resultado').innerHTML = recomendado;
+});
+    
+document.getElementById('calcular2').addEventListener('click', function() {
+
+var m1 = parseFloat(document.getElementById('m1').value);
+var result = m1 / 0.0625;
+
+var recomendado = "";
+
+if (result > 0 && result <= 10){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 10 unidades!!!" + "<br>" + "<br>"
+    +"Segue nosso kit com 10 unidades💜";
+}
+if (result > 10 && result <= 20){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 10 unidades!!!" + "<br>" + "<br>"
+    +"Segue nosso kit com 10 unidades💜";
+} 
+if (result > 20 && result <= 30){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 10 unidades!!!" + "<br>" + "<br>"
+    +"Segue nosso kit com 10 unidades💜";
+} 
+if (result > 30 && result <= 40){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 20 unidades!!!" + "<br>" + "<br>"
+    +"Segue nosso kit com 20 unidades💜";
+} 
+if (result > 40 && result <= 50){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 50 unidades!!!" + "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜";
+} 
+if (result > 50 && result <= 60){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 60 && result <= 70){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 50 unidades + 1 kit com 20 unidades !!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 70 && result <= 80){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 50 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 80 && result <= 90){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 50 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>" 
+    + "Segue nosso kit com 50 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 90 && result <= 100){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜";
+} 
+if (result > 100 && result <= 110){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 110 && result <= 120){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 120 && result <= 130){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 130 && result <= 140){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 140 && result <= 150){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜";
+} 
+if (result > 150 && result <= 160){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 160 && result <= 170){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 170 && result <= 180){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 4 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 180 && result <= 190){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 1 kit com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 190 && result <= 200){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜";
+} 
+if (result > 200 && result <= 210){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 210 && result <= 220){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 220 && result <= 230){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 230 && result <= 240){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 240 && result <= 250){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜";
+} 
+if (result > 250 && result <= 260){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 260 && result <= 270){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 270 && result <= 280){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 4 kit com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 280 && result <= 290){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 2 kits com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 290 && result <= 300){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100  !!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜";
+} 
+if (result > 300 && result <= 310){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 310 && result <= 320){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+}
+if (result > 320 && result <= 330){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 330 && result <= 340){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 1 kit com 40 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 40 unidades💜";
+} 
+if (result > 340 && result <= 350){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜";
+} 
+if (result > 350 && result <= 360){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 360 && result <= 370){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 370 && result <= 380){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 4 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 380 && result <= 390){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 3 kits com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 390 && result <= 400){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜";
+}
+if (result > 400 && result <= 410){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 1 kit com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 410 && result <= 420){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 1 kit com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 420 && result <= 430){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 3 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 430 && result < 440){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 2 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>"  + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 440 && result <= 450){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 1 kit com 50 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 50 unidades💜";
+} 
+if (result > 450 && result <= 460){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 3 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 460 && result <= 470){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 7 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 470 && result <= 480){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 4 kits com 20 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>" 
+    + "Segue nosso kit com 20 unidades💜";
+} 
+if (result > 480 && result <= 490){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 4 kits com 100 unidades + 9 kits com 10 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜" +  "<br>" + "<br>"
+    + "Segue nosso kit com 10 unidades💜";
+} 
+if (result > 490 && result <= 500){
+    recomendado = "Para medida de " + m1 + "m² recomendo que compre 5 kits com 100 unidades!!!" +  "<br>" + "<br>"
+    + "Segue nosso kit com 100 unidades💜";
+} 
+document.getElementById('resultado').innerHTML = recomendado;
+});
+</script>
+
+<footer>
+    <h2><y class="y1">Created by</y> <y class="y2">Rafael Konscca</y></h2>
+</footer>
+
+</body>
+</html>
